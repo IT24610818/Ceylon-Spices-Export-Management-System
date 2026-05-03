@@ -16,4 +16,12 @@ const storage = new CloudinaryStorage({
   },
 });
 
-module.exports = { cloudinary, storage };
+const documentStorage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: 'ceylon-spices-documents',
+    resource_type: 'auto', // This allows PDFs and other raw files
+  },
+});
+
+module.exports = { cloudinary, storage, documentStorage };
